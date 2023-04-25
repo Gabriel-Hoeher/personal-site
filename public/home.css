@@ -93,6 +93,6 @@ a {
 } */
 
 
-h4, h2, .h2, h3 span {
+h4, h2, .h2 {
     color: orange !important;
 }

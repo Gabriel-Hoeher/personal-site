@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <script src="https://kit.fontawesome.com/fa3d44f30d.js" crossorigin="anonymous"></script>
@@ -11,25 +11,65 @@
     <title>Gabriel Hoeher</title>
 </head>    
 <body>
-    <!-- <img> -->
-    <button type="button" class="btn btn-success">Gabriel Hoeher</button>
-    <button type="button" class="btn btn-success">Resume</button>
-    <button type="button" class="btn btn-success">Work</button>
-    <button type="button" class="btn btn-success">Cloud/Docker</button>
-    <a href="https://www.linkedin.com/in/gabriel-hoeher-9a72911a9/"><i class="fa-brands fa-linkedin fa-3x"></i></a>
-    <a href="https://github.com/Gabriel-Hoeher"><i class="fa-brands fa-github fa-3x"></i></a>
+    <ul class="nav justify-content-end">
+        <li class="nav-item">
+            <button id="homeBtn" type="button" class="btn btn-primary nav-link active">Gabriel Hoeher</button>
+        </li>
+        <li class="nav-item">
+            <button id="resumeBtn" type="button" class="btn btn-primary nav-link">Resume</button>
+        </li>
+        <li class="nav-item">
+            <button id="projectsBtn" type="button" class="btn btn-primary nav-link">Projects</button>
+        </li>
+        <li class="nav-item">
+            <button id="aboutBtn" type="button" class="btn btn-primary nav-link">About</button>
+        </li>
+        <li class="nav-item">
+            <a href="https://www.linkedin.com/in/gabriel-hoeher-9a72911a9/">
+                <i class="fa-brands fa-linkedin fa-3x"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="https://github.com/Gabriel-Hoeher">
+                <i class="fa-brands fa-github fa-3x"></i>
+            </a>
+        </li>
+    </ul>
     <br>
-    <div id="skills"></div>
-    <div id="projects"></div>
-    <div id="xp" class="card" style="width: 20rem;">
-        <h1 class="card-title"></h1>
-        <p></p>
-        <h2 class="card-subtitle mb-2 text-body-secondary"></h2>
+    <div id="home">
+        <img>
     </div>
-    <div id="edu" class="card" style="width: 20rem;">
-        <h1 class="card-title"></h1>
-        <p></p>
-        <h2 class="card-subtitle mb-2 text-body-secondary"></h2>
+    <div id="resume" class="hidden row">
+        <div id="skills" class="col"></div>
+        <div class="container col">
+            <div id="xp" class="card border-0">
+                <h2 class="fw-bold"></h2>
+                <p class="mb-3 text-primary"></p>
+                <h5 class="card-subtitle text-primary mb-3 fst-italic"></h5>
+                <em class="card-text font-italic">
+                    <i class="fa-solid fa-code"></i>
+                    <span></span>
+                </em>
+                <ul></ul>
+            </div>
+            <div id="edu" class="card border-0">
+                <h2 class="fw-bold"></h2>
+                <p class="mb-3 text-primary"></p>
+                <h5 class="card-subtitle mb-3 fst-italic text-primary"></h5>
+                <ul></ul>
+            </div>
+        </div>
+    </div>
+    <div id="projects" class="hidden row"></div>
+    <div id="about" class="hidden">
+        <h2 class="fw-bold">About This Site</h2> 
+        <div class="row">
+            <img src="diagram.png" class="col-8">
+            <div class="col-4">
+                <h6 class="h3 text-primary"></h6>
+                <ul></ul>
+            </div>
+        </div>
     </div>
 </body>
 </html>

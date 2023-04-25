@@ -5,3 +5,94 @@ body {
     font-size: larger;
     overflow: auto;
 }
+
+.hidden { display: none; }
+
+#home img {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#projects > * {
+    margin: 1.5rem;
+}
+
+#projects {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+#resume div.col {
+    max-width: 33vw;
+}
+
+#skills {
+    margin-left: 16.5%;
+} 
+
+#skills ul {
+    padding-left: 3rem;
+}
+
+#resume .card {
+    margin-bottom: 3rem;
+}
+
+ul.nav {
+    padding-top: 1rem;
+    padding-right: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+ul.nav > * {
+    padding-left: 1.5rem;
+}
+
+#resume ul.col-md-auto {
+    margin-right: 3rem;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+#about > * {
+    margin-inline: 3rem;
+}
+
+#about div.col-3 {
+    margin-left: 3rem;
+}
+
+#about img.col-8 {
+    max-width: none !important;
+}
+
+#about ul > * {
+    padding-bottom: 2%;
+}
+
+#about h6 {
+    padding-bottom: 3rem;
+}
+
+#projects em.font-italic i {
+    padding: .25rem;
+}
+
+#xp em {
+    padding-left: 1rem;
+}
+
+/* h5, h6, p.mb-3, #skills i, #projects em {
+    color: orange !important;
+} */
+
+
+h4, h2, .h2, h3 span {
+    color: orange !important;
+}

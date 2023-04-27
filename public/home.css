@@ -8,11 +8,28 @@ body {
 
 .hidden { display: none; }
 
-#home img {
+/* #home img {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+} */
+
+#home {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 20vh;
+}
+
+#home h1 {
+    text-align: center;
+    font-size: 300%;
+}
+
+#home .col {
+    padding-inline: 2rem;
+    padding-top: 2rem;
+
 }
 
 #projects > * {
@@ -88,11 +105,29 @@ a {
     padding-left: 1rem;
 }
 
-/* h5, h6, p.mb-3, #skills i, #projects em {
+h4, h2, .h2, .orange {
     color: orange !important;
-} */
+}
+li, em, .base, .blue {
+    color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));
+}
+
+.center {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+#projects h4.card-title {
+    padding-bottom: 1rem;
+}
+
+.active, ul .nav-item button:hover {
+    background-color: orange !important;
+}  
 
 
-h4, h2, .h2 {
-    color: orange !important;
+#about h2 {
+    padding-left: 4rem;
+    padding-bottom: 1rem;
 }

@@ -5,17 +5,20 @@ window.onload = () => {
         params: { page: 'website' }
     }).then((res) => {
         setBtnClick();
-        setHomePage();
+        setHomePage(res.data[0]);
         createTechSkillsCards(res.data[4]);
         createXPEduCard(res.data[2], false);    //education
         createXPEduCard(res.data[3], true);     //experience
-        createProjectCards(res.data[1]);
-        createAboutPage(res.data[0]);
+        createProjectCards(res.data[5]);
+        createAboutPage(res.data[1]);
     });
 };
 
-function setHomePage() {
-    $('#home img').attr('src', 'code-img.png');
+function setHomePage(data) {
+    $('#home h1').text(data.data.header);
+    for (const text of data.data.text) {
+        $('#home').append(`<h3 class='blue col h4'>${text}</h3>`);
+    }
 }
 
 function createAboutPage(data) {
@@ -23,7 +26,13 @@ function createAboutPage(data) {
         if (i==0) {
             $('#about h6').text(data.data[i]);
         }
-        else $('#about ul').append(`<li>${data.data[i]}</li>`);
+        else {
+            let splitData = data.data[i].split(':');
+            $('#about ul').append(`
+                <li><span class="orange">${splitData[0]}:</span>
+                <span class="base">${splitData[1]}</span></li>
+            `);
+        }
     }
     // $('#about').text(data.data);
 }
@@ -72,7 +81,7 @@ function createTechSkillsCards(skillsData) {
     for (const [type, skills] of Object.entries(skillsData.data)) {
         $('#skills').append(
             $(`<div id="${type}" class="card border-0 d-flex justify-content-evenly">
-                <h3 class="text-primary fw-bold h2">
+                <h3 class="h2">
                 <i class="fa-solid fa-${faIcons[type]}"></i>
                 <span></span></h3>
                 <div id="${type}List" class="row"></div></div>`
@@ -89,21 +98,20 @@ function createTechSkillsCards(skillsData) {
     }
 }
 
+{/* <img src="code-img.png" class="card-img-top"> */}
 function createProjectCards(projData) {
     for (const proj of projData.data) {
-        let card = $(`
-            <div class="card border-0 col"><a href="${proj.link}">
-            <img src="code-img.png" class="card-img-top">
+        let card = `<div class="card border-0 col"><a href="${proj.link}">
+            <i class="fa-regular fa-folder-open fa-8x center orange"></i>
             <div class="card-text">
-            <h4 class="card-title fw-bold h3">${proj.name}</h4>
-            <em class="card-text text-primary font-italic">
-            <i class="fa-solid fa-code"></i>${proj.skills}</em><ul>`
-        );
+            <h4 class="card-title fw-bold h3 center">${proj.name}</h4>
+            <em class="card-text text-primary font-italic center">
+            <i class="fa-solid fa-code "></i>${proj.skills}</em><ul>`;
 
         for (const text of proj.description) {
-            $(card).append(`<li class="card-text">${text}</li>`);
+            card += `<li class="card-text">${text}</li>`;
         }      
-        $(card).append(`</ul></div></a></div>`);
+        card += `</ul></div></a></div>`;
         $('#projects').append(card);
     }
 }
